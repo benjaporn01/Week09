@@ -22,7 +22,7 @@ namespace GDIPlus_1
             Graphics g = e.Graphics;
             Bitmap bmp = new Bitmap("D:\\Capture.PNG");
             this.SetClientSizeCore(bmp.Width + 20, bmp.Height +20);
-            g.DrawImage(bmp, 10, 10);
+            g.DrawImage(bmp, 10, 10);   
         
             g.Dispose();
         }
