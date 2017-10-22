@@ -17,7 +17,6 @@ namespace GDIPlus_1
         {
             InitializeComponent();
         }
-
         private void Form1_Paint(object sender, PaintEventArgs e)
         {
             Graphics g = e.Graphics;
@@ -37,5 +36,12 @@ namespace GDIPlus_1
             e.Graphics.FillRectangle(pnlGdt, panel2.ClientRectangle);
             pnlGdt.Dispose();
         }
-    }
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+            GraphicsPath path = new GraphicsPath();
+            LinearGradientBrush pnlGdt = new LinearGradientBrush(panel3.ClentRectangle,
+                Color.Yellow, Color.Navy, 90f, true);
+            e.Graphics.FillRectangle(pnlGdt, panel3.ClientRectangle);
+            pnlGdt.Dispose();
+        }
 }
