@@ -17,31 +17,21 @@ namespace GDIPlus_1
         {
             InitializeComponent();
         }
+
         private void Form1_Paint(object sender, PaintEventArgs e)
         {
             Graphics g = e.Graphics;
-            g.Dispose();
+            Pen bluepen = new Pen(Color.Blue, 2);
+            g.DrawRectangle(bluepen, 10, 10, 100, 100);
+            bluepen.Dispose();
+
+            Pen somepen = new Pen(Color.FromArgb(255, 120, 200));
+            g.DrawEllipse(somepen, 20, 20, 200, 200);
+            somepen.Dispose();   
+
+            Color col = Color.FromName("LightGreen");
+            this.BackColor = col;
+
         }
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-            LinearGradientBrush pnlGdt = new LinearGradientBrush(panel1.ClrentRectangle, 
-                Color.Yellow, Color.Navy, 0f, true);
-            e.Graphics.FillRectangle(pnlGdt, panel1.ClientRectangle);
-            pnlGdt.Dispose();
-        }
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-            LinearGradientBrush pnlGdt = new LinearGradientBrush(panel2.ClentRectangle,
-                Color.Yellow,Color.Navy,90f, true);
-            e.Graphics.FillRectangle(pnlGdt, panel2.ClientRectangle);
-            pnlGdt.Dispose();
-        }
-        private void panel3_Paint(object sender, PaintEventArgs e)
-        {
-            GraphicsPath path = new GraphicsPath();
-            LinearGradientBrush pnlGdt = new LinearGradientBrush(panel3.ClentRectangle,
-                Color.Yellow, Color.Navy, 90f, true);
-            e.Graphics.FillRectangle(pnlGdt, panel3.ClientRectangle);
-            pnlGdt.Dispose();
-        }
+    }
 }
