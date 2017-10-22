@@ -26,7 +26,7 @@ namespace GDIPlus_1
 
             Rectangle rect = new Rectangle(10,10,100,100);
             g.DrawRectangle(myPen, rect);
-            g.Dispose();
+            g.Dispose();  
         }
     }
 }
